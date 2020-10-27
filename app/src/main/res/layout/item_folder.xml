@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.amir.imagepicker.model.Folder" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/folderThumbnail"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/place_holder" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@color/black_alpha_50"
+            android:orientation="vertical"
+            android:padding="5dp">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/folderName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:text="@{model.folderName}"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                tools:text="Amir Fury" />
+
+            <TextView
+                android:id="@+id/imageCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{model.images.size()}"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                tools:text="1993" />
+        </LinearLayout>
+
+    </RelativeLayout>
+</layout>
